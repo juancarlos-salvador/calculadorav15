@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutbase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="com.jcsalbanes.calculadora.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutsuperior"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:background="@color/fondo"
+
+        >
+
+        <EditText
+            android:id="@+id/etoperacion"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="6dp"
+            android:cursorVisible="false"
+            android:textIsSelectable="false"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="right"
+            android:padding="1dp"
+            android:selectAllOnFocus="false"
+            android:background="@null"
+            android:textDirection="rtl"
+            android:textSize="35sp"
+            android:maxLength="17"
+            />
+
+
+
+        <EditText
+            android:id="@+id/etresultado"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:ellipsize="end"
+            android:background="@null"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="2dp"
+            android:padding="1dp"
+            android:textSize="35sp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textDirection="rtl"
+            android:textIsSelectable="false"
+            android:maxLength="17"
+
+            />
+
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/layoutmedio"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="false"
+        android:layout_below="@+id/layoutsuperior"
+        android:background="@color/fondo"
+        >
+
+        <TableRow
+            android:id="@+id/fila1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="@string/boton7"
+                android:textSize="30sp"
+
+                />
+
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton8"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b9"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton9"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bdividir"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion2"
+                android:text="@string/botondividir"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fila2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton4"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton5"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton6"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bmultiplicar"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion2"
+                android:text="@string/botonmultiplicar"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fila3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/b1"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton1"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b2"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton2"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b3"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton3"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/brestar"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion2"
+                android:text="@string/botonrestar"
+                android:textScaleX="3"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fila4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/bdecimal"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/botondecimal"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/b0"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion1"
+                android:text="@string/boton0"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bigual"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion2"
+                android:text="@string/botonigual"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/bsumar"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/pulsacion2"
+                android:text="@string/botonsumar"
+                android:textSize="30sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutinferior"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/layoutmedio"
+        android:orientation="vertical"
+        android:background="@color/fondo"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal"
+            android:background="@color/fondo"
+            >
+
+
+            <CheckBox
+                android:id="@+id/cbactivar"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:text="@string/cbactivar"
+                android:onClick="activacion"
+                android:textSize="15sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/bAC"
+                android:layout_width="15dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/pulsacion3"
+                android:text="@string/botonac"
+                android:textSize="15sp"
+                />
+
+            <Button
+                android:id="@+id/bborrar"
+                android:layout_width="15dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/pulsacion4"
+                android:drawableLeft="@mipmap/ic_arrow_back_black_18dp"
+                android:textSize="15sp"
+                android:text="@string/botonborrar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

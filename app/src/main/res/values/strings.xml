@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">calculadora</string>
+    <string name="boton0">0</string>
+    <string name="boton1">1</string>
+    <string name="boton2">2</string>
+    <string name="boton3">3</string>
+    <string name="boton4">4</string>
+    <string name="boton5">5</string>
+    <string name="boton6">6</string>
+    <string name="boton7">7</string>
+    <string name="boton8">8</string>
+    <string name="boton9">9</string>
+    <string name="botonsumar">+</string>
+    <string name="botonrestar">-</string>
+    <string name="botonmultiplicar">x</string>
+    <string name="botondividir">/</string>
+    <string name="botonigual">=</string>
+    <string name="botondecimal">.</string>
+    <string name="botonac">AC</string>
+    <string name="botonborrar">Borrar</string>
+    <string name="cbactivar">Activar</string>
+</resources>
