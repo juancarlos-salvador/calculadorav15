@@ -5,65 +5,99 @@
     android:id="@+id/layoutbase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     android:visibility="visible"
     tools:context="com.jcsalbanes.calculadora.MainActivity">
 
     <LinearLayout
         android:id="@+id/layoutsuperior"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
+        android:background="@null"
         android:gravity="top"
         android:orientation="vertical"
-        android:background="@color/fondo"
 
         >
 
-        <EditText
-            android:id="@+id/etoperacion"
+        <LinearLayout
+            android:id="@+id/w"
+
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="2dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="6dp"
-            android:cursorVisible="false"
-            android:textIsSelectable="false"
-            android:ellipsize="end"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:gravity="right"
-            android:padding="1dp"
-            android:selectAllOnFocus="false"
-            android:background="@null"
-            android:textDirection="rtl"
-            android:textSize="35sp"
-            android:maxLength="17"
-            />
+            android:layout_height="50dp"
+            android:background="@android:color/black"
+            android:orientation="horizontal">
+            >
 
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/logoeo" />
 
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="DAM 2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/fondo" />
 
-        <EditText
-            android:id="@+id/etresultado"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:ellipsize="end"
-            android:background="@null"
-            android:gravity="right"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ij"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="2dp"
-            android:padding="1dp"
-            android:textSize="35sp"
-            android:textColor="@android:color/holo_orange_dark"
-            android:textDirection="rtl"
-            android:textIsSelectable="false"
-            android:maxLength="17"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_orange_light"
+            android:orientation="vertical">
 
-            />
+            <EditText
+                android:id="@+id/etoperacion"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/fondo"
+                android:cursorVisible="false"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="right"
+                android:maxLength="17"
+                android:padding="1dp"
+                android:selectAllOnFocus="false"
+                android:textDirection="rtl"
+                android:textIsSelectable="false"
+                android:textSize="35sp" />
+
+            <EditText
+                android:id="@+id/etresultado"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/fondo"
+                android:cursorVisible="false"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="right"
+                android:maxLength="17"
+                android:padding="1dp"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textDirection="rtl"
+                android:textIsSelectable="false"
+                android:textSize="35sp"
+
+                />
+
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -76,7 +110,7 @@
         android:layout_alignParentEnd="false"
         android:layout_below="@+id/layoutsuperior"
         android:background="@color/fondo"
-        >
+        android:backgroundTint="@android:color/holo_orange_light">
 
         <TableRow
             android:id="@+id/fila1"
@@ -94,10 +128,10 @@
                 android:background="@drawable/pulsacion1"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton7"
-                android:textSize="30sp"
 
-                />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/b8"
@@ -109,6 +143,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton8"
                 android:textSize="30sp" />
 
@@ -121,6 +156,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton9"
                 android:textSize="30sp" />
 
@@ -133,6 +169,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion2"
+                android:fontFamily="@font/acme"
                 android:text="@string/botondividir"
                 android:textSize="30sp" />
 
@@ -152,6 +189,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton4"
                 android:textSize="30sp" />
 
@@ -164,6 +202,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton5"
                 android:textSize="30sp" />
 
@@ -176,6 +215,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton6"
                 android:textSize="30sp" />
 
@@ -188,6 +228,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion2"
+                android:fontFamily="@font/acme"
                 android:text="@string/botonmultiplicar"
                 android:textSize="30sp" />
 
@@ -207,6 +248,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton1"
                 android:textSize="30sp" />
 
@@ -219,6 +261,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton2"
                 android:textSize="30sp" />
 
@@ -231,6 +274,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton3"
                 android:textSize="30sp" />
 
@@ -243,6 +287,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion2"
+                android:fontFamily="@font/acme"
                 android:text="@string/botonrestar"
                 android:textScaleX="3"
                 android:textSize="30sp" />
@@ -263,6 +308,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/botondecimal"
                 android:textSize="30sp" />
 
@@ -275,6 +321,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion1"
+                android:fontFamily="@font/acme"
                 android:text="@string/boton0"
                 android:textSize="30sp" />
 
@@ -287,6 +334,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion2"
+                android:fontFamily="@font/acme"
                 android:text="@string/botonigual"
                 android:textSize="30sp" />
 
@@ -299,6 +347,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="1dp"
                 android:background="@drawable/pulsacion2"
+                android:fontFamily="@font/acme"
                 android:text="@string/botonsumar"
                 android:textSize="30sp" />
 
@@ -311,9 +360,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/layoutmedio"
-        android:orientation="vertical"
-        android:background="@color/fondo"
-        >
+        android:background="@android:color/holo_orange_light"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -321,9 +369,8 @@
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:orientation="horizontal"
-            android:background="@color/fondo"
-            >
+            android:background="@android:color/holo_orange_light"
+            android:orientation="horizontal">
 
 
             <CheckBox
@@ -332,9 +379,12 @@
                 android:layout_height="45dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:buttonTint="@android:color/black"
+                android:fontFamily="@font/acme"
                 android:gravity="center_vertical|center_horizontal|center"
-                android:text="@string/cbactivar"
                 android:onClick="activacion"
+                android:text="@string/cbactivar"
+                android:textColorLink="@android:color/background_dark"
                 android:textSize="15sp"
                 android:visibility="visible" />
 
@@ -345,9 +395,9 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/pulsacion3"
+                android:fontFamily="@font/acme"
                 android:text="@string/botonac"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/bborrar"
@@ -357,8 +407,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/pulsacion4"
                 android:drawableLeft="@mipmap/ic_arrow_back_black_18dp"
-                android:textSize="15sp"
-                android:text="@string/botonborrar" />
+                android:fontFamily="@font/acme"
+                android:text="@string/botonborrar"
+                android:textSize="15sp" />
 
         </LinearLayout>
 

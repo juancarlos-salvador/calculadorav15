@@ -18,11 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
     double numero1, numero2, resultado;
 
+    int tiponumero = 0;
+    int resultadoEntero = 0;
+
     String operador = "sinoperador";
 
     Boolean calculando = false;
+    Boolean numerook =false;
 
     CheckBox cbActivar;
+
 
 
 
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "0");
+                numerook = true;
             }
         });
         bUno.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "1");
+                numerook = true;
 
             }
         });
@@ -77,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "2");
+                numerook = true;
             }
         });
         bTres.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "3");
+                numerook = true;
             }
         });
         bCuatro.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "4");
+                numerook = true;
             }
         });
         bCinco.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "5");
+                numerook = true;
             }
         });
         bSeis.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "6");
+                numerook = true;
             }
         });
         bSiete.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "7");
+                numerook = true;
             }
         });
         bOcho.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "8");
+                numerook = true;
             }
         });
         bNueve.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 etconcatenar = (EditText)findViewById(R.id.etoperacion);
                 etOperacion.setText(etconcatenar.getText().toString() + "9");
+                numerook = true;
             }
         });
         bDecimal.setOnClickListener(new View.OnClickListener() {
@@ -139,12 +154,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(calculando==false) {
+
+                if(numerook & !calculando) {
                     operador = "+";
                     etconcatenar = (EditText) findViewById(R.id.etoperacion);
                     numero1 = Double.parseDouble(etconcatenar.getText().toString());
                     etOperacion.setText(etconcatenar.getText().toString() + operador);
                     calculando = true;
+                    numerook =false;
                 }
             }
         });
@@ -152,12 +169,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(calculando==false) {
+                if(numerook & !calculando) {
                     operador = "-";
                     etconcatenar = (EditText)findViewById(R.id.etoperacion);
                     numero1 = Double.parseDouble(etconcatenar.getText().toString());
                     etOperacion.setText(etconcatenar.getText().toString() + operador);
                     calculando = true;
+                    numerook =false;
                 }
             }
         });
@@ -165,12 +183,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(calculando==false) {
+                if(numerook & !calculando) {
                     operador = "x";
                     etconcatenar = (EditText)findViewById(R.id.etoperacion);
                     numero1 = Double.parseDouble(etconcatenar.getText().toString());
                     etOperacion.setText(etconcatenar.getText().toString() + operador);
                     calculando = true;
+                    numerook =false;
                 }
             }
         });
@@ -178,60 +197,59 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(calculando==false) {
+                if(numerook & !calculando) {
                     operador = "/";
                     etconcatenar = (EditText)findViewById(R.id.etoperacion);
                     numero1 = Double.parseDouble(etconcatenar.getText().toString());
                     etOperacion.setText(etconcatenar.getText().toString() + operador);
                     calculando = true;
+                    numerook =false;
                 }
             }
         });
         bIgual.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
 
-                etconcatenar = (EditText)findViewById(R.id.etoperacion);
-                String text =etconcatenar.getText().toString();
-                String result = text.substring(text.indexOf(operador) + 1);
-                numero2 = Double.parseDouble(result);
+                if (numerook) {
+                    etconcatenar = (EditText) findViewById(R.id.etoperacion);
+                    String text = etconcatenar.getText().toString();
+                    String result = text.substring(text.indexOf(operador) + 1);
+                    numero2 = Double.parseDouble(result);
 
-                if(operador.equals("sinoperador")){
-                    etconcatenar = (EditText)findViewById(R.id.etoperacion);
-                    numero1 = Double.parseDouble(etconcatenar.getText().toString());
-                    etOperacion.setText(etconcatenar.getText().toString());
-                    resultado = numero1;
-                }
-                if(operador.equals("+")){
-                   resultado = numero1 + numero2;
-                }
-                if(operador.equals("-")){
-                    resultado = numero1 - numero2;
-                }
-                if(operador.equals("x")){
-                    resultado = numero1 * numero2;
-                }
-                if(operador.equals("/")){
-                    if(numero2 != 0){
-                        resultado = numero1 / numero2;
-                    }else {
-                        etResultado.setText("Dividir entre 0");
-                        etOperacion.setText("Op. No permitida");
+                    if (operador.equals("sinoperador")) {
+                        etconcatenar = (EditText) findViewById(R.id.etoperacion);
+                        numero1 = Double.parseDouble(etconcatenar.getText().toString());
+                        etOperacion.setText(etconcatenar.getText().toString());
+                        resultado = numero1;
+                        mostrarresultado();
+                    }
+                    if (operador.equals("+")) {
+                        resultado = numero1 + numero2;
+                        mostrarresultado();
+                    }
+                    if (operador.equals("-")) {
+                        resultado = numero1 - numero2;
+                        mostrarresultado();
+                    }
+                    if (operador.equals("x")) {
+                        resultado = numero1 * numero2;
+                        mostrarresultado();
+                    }
+                    if (operador.equals("/")) {
+                        if (numero2 != 0) {
+                            resultado = numero1 / numero2;
+                            mostrarresultado();
+
+                        } else {
+                            resetearPantalla();
+                            etOperacion.setText(R.string.nopermitido);
+                            etResultado.setText(R.string.dividircero);
+                            bBorrar.setEnabled(false);
+                        }
                     }
                 }
-                int tiponumero= comprobarResul(resultado);
-
-
-
-                    if (tiponumero==1) {
-                        int resultadoEntero = (int) Math.floor(resultado);
-                        etResultado.setText(String.valueOf(resultadoEntero) + "=");
-                        calculando = true;
-                    }else {
-                        etResultado.setText(String.valueOf(resultado) + "=");
-                        calculando = true;
-                    }
-
             }
         });
 
@@ -240,9 +258,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 numero1 = 0;
                 numero2 = 0;
+                resultado = 0;
                 etOperacion.setText("");
                 etResultado.setText("");
                 calculando= false;
+                numerook = false;
             }
         });
 
@@ -259,122 +279,158 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void comprobarEstado() {
+    private void mostrarresultado() {
+        tiponumero = comprobarResul(resultado);
+
+        if (resultado>=0) {
+            if (tiponumero == 1) {
+                resultadoEntero = (int) Math.round(resultado);
+                etResultado.setTextDirection(View.TEXT_DIRECTION_RTL);
+                etResultado.setText(String.valueOf(resultadoEntero) + "=");
+                calculando = true;
+            } else {
+                etResultado.setTextDirection(View.TEXT_DIRECTION_RTL);
+                etResultado.setText(String.valueOf(resultado) + "=");
+                calculando = true;
+            }
+        }else{
+
+            if (tiponumero == 1) {
+                resultadoEntero = (int) Math.floor(resultado);
+                etResultado.setTextDirection(View.TEXT_DIRECTION_LTR);
+                etResultado.setText("=" + String.valueOf(resultadoEntero));
+                calculando = true;
+            } else {
+                etResultado.setTextDirection(View.TEXT_DIRECTION_LTR);
+                etResultado.setText(String.valueOf(resultado) + "=");
+                calculando = true;
+            }
 
 
-        if (cbActivar.isChecked() == false) {
-            bBorrar.setEnabled(false);
-            bResetear.setEnabled(false);
-            bCero.setEnabled(false);
-            bUno.setEnabled(false);
-            bDos.setEnabled(false);
-            bTres.setEnabled(false);
-            bCuatro.setEnabled(false);
-            bCinco.setEnabled(false);
-            bSeis.setEnabled(false);
-            bSiete.setEnabled(false);
-            bOcho.setEnabled(false);
-            bNueve.setEnabled(false);
-            bDecimal.setEnabled(false);
-            bIgual.setEnabled(false);
-            bSumar.setEnabled(false);
-            bRestar.setEnabled(false);
-            bMultiplicar.setEnabled(false);
-            bDividir.setEnabled(false);
-            etOperacion.setEnabled(false);
 
-            Toast Mensaje = Toast.makeText(getApplicationContext(),
-                    "Pulsa ACTIVAR para realizar una operación",Toast.LENGTH_LONG);
-            Mensaje.setGravity(Gravity.CENTER, 20, 20);
-            Mensaje.show();
-        } else{
-
-            bBorrar.setEnabled(true);
-            bResetear.setEnabled(true);
-            bCero.setEnabled(true);
-            bUno.setEnabled(true);
-            bDos.setEnabled(true);
-            bTres.setEnabled(true);
-            bCuatro.setEnabled(true);
-            bCinco.setEnabled(true);
-            bSeis.setEnabled(true);
-            bSiete.setEnabled(true);
-            bOcho.setEnabled(true);
-            bNueve.setEnabled(true);
-            bDecimal.setEnabled(true);
-            bIgual.setEnabled(true);
-            bSumar.setEnabled(true);
-            bRestar.setEnabled(true);
-            bMultiplicar.setEnabled(true);
-            bDividir.setEnabled(true);
-            etOperacion.setEnabled(true);
-
-            etResultado.setText("");
         }
     }
 
-
-    public void activacion(View view) {
-
-
-
-        if (cbActivar.isChecked() == false) {
-            bBorrar.setEnabled(false);
-            bResetear.setEnabled(false);
-            bCero.setEnabled(false);
-            bUno.setEnabled(false);
-            bDos.setEnabled(false);
-            bTres.setEnabled(false);
-            bCuatro.setEnabled(false);
-            bCinco.setEnabled(false);
-            bSeis.setEnabled(false);
-            bSiete.setEnabled(false);
-            bOcho.setEnabled(false);
-            bNueve.setEnabled(false);
-            bDecimal.setEnabled(false);
-            bIgual.setEnabled(false);
-            bSumar.setEnabled(false);
-            bRestar.setEnabled(false);
-            bMultiplicar.setEnabled(false);
-            bDividir.setEnabled(false);
-            etOperacion.setEnabled(false);
+    private void resetearPantalla() {
+            numero1 = 0;
+            numero2 = 0;
             etOperacion.setText("");
             etResultado.setText("");
-            Toast Mensaje = Toast.makeText(getApplicationContext(),
-                    "Pulsa ACTIVAR para realizar una operación",Toast.LENGTH_LONG);
-            Mensaje.setGravity(Gravity.CENTER, 20, 20);
-            Mensaje.show();
-        } else{
-            etResultado.setText(" ");
-            bBorrar.setEnabled(true);
-            bResetear.setEnabled(true);
-            bCero.setEnabled(true);
-            bUno.setEnabled(true);
-            bDos.setEnabled(true);
-            bTres.setEnabled(true);
-            bCuatro.setEnabled(true);
-            bCinco.setEnabled(true);
-            bSeis.setEnabled(true);
-            bSiete.setEnabled(true);
-            bOcho.setEnabled(true);
-            bNueve.setEnabled(true);
-            bDecimal.setEnabled(true);
-            bIgual.setEnabled(true);
-            bSumar.setEnabled(true);
-            bRestar.setEnabled(true);
-            bMultiplicar.setEnabled(true);
-            bDividir.setEnabled(true);
-            etOperacion.setEnabled(true);
-            etOperacion.setText("");
-            etResultado.setText("");
+            calculando= false;
+            numerook = false;
         }
-    }
-    public int comprobarResul(double x) {
-        if (x % 1 == 0) {
-            return 1;
-        } else {
-            return 0;
+
+        private void comprobarEstado() {
+
+
+            if (!cbActivar.isChecked()) {
+                bBorrar.setEnabled(false);
+                bResetear.setEnabled(false);
+                bCero.setEnabled(false);
+                bUno.setEnabled(false);
+                bDos.setEnabled(false);
+                bTres.setEnabled(false);
+                bCuatro.setEnabled(false);
+                bCinco.setEnabled(false);
+                bSeis.setEnabled(false);
+                bSiete.setEnabled(false);
+                bOcho.setEnabled(false);
+                bNueve.setEnabled(false);
+                bDecimal.setEnabled(false);
+                bIgual.setEnabled(false);
+                bSumar.setEnabled(false);
+                bRestar.setEnabled(false);
+                bMultiplicar.setEnabled(false);
+                bDividir.setEnabled(false);
+                etOperacion.setEnabled(false);
+                etResultado.setEnabled(false);
+                Toast Mensaje = Toast.makeText(getApplicationContext(),R.string.mensajeactivar,Toast.LENGTH_LONG);
+                Mensaje.setGravity(Gravity.CENTER, 20, 20);
+                Mensaje.show();
+            } else{
+
+                bBorrar.setEnabled(true);
+                bResetear.setEnabled(true);
+                bCero.setEnabled(true);
+                bUno.setEnabled(true);
+                bDos.setEnabled(true);
+                bTres.setEnabled(true);
+                bCuatro.setEnabled(true);
+                bCinco.setEnabled(true);
+                bSeis.setEnabled(true);
+                bSiete.setEnabled(true);
+                bOcho.setEnabled(true);
+                bNueve.setEnabled(true);
+                bDecimal.setEnabled(true);
+                bIgual.setEnabled(true);
+                bSumar.setEnabled(true);
+                bRestar.setEnabled(true);
+                bMultiplicar.setEnabled(true);
+                bDividir.setEnabled(true);
+                etOperacion.setEnabled(true);
+                etResultado.setEnabled(true);
+
+            }
         }
-    }
+
+
+        public void activacion(View view) {
+            if (!cbActivar.isChecked()) {
+                bBorrar.setEnabled(false);
+                bResetear.setEnabled(false);
+                bCero.setEnabled(false);
+                bUno.setEnabled(false);
+                bDos.setEnabled(false);
+                bTres.setEnabled(false);
+                bCuatro.setEnabled(false);
+                bCinco.setEnabled(false);
+                bSeis.setEnabled(false);
+                bSiete.setEnabled(false);
+                bOcho.setEnabled(false);
+                bNueve.setEnabled(false);
+                bDecimal.setEnabled(false);
+                bIgual.setEnabled(false);
+                bSumar.setEnabled(false);
+                bRestar.setEnabled(false);
+                bMultiplicar.setEnabled(false);
+                bDividir.setEnabled(false);
+                etOperacion.setEnabled(false);
+                etOperacion.setText("");
+                etResultado.setText("");
+                Toast Mensaje = Toast.makeText(getApplicationContext(),R.string.mensajeactivar,Toast.LENGTH_LONG);
+                Mensaje.setGravity(Gravity.CENTER, 20, 20);
+                Mensaje.show();
+            } else{
+                bBorrar.setEnabled(true);
+                bResetear.setEnabled(true);
+                bCero.setEnabled(true);
+                bUno.setEnabled(true);
+                bDos.setEnabled(true);
+                bTres.setEnabled(true);
+                bCuatro.setEnabled(true);
+                bCinco.setEnabled(true);
+                bSeis.setEnabled(true);
+                bSiete.setEnabled(true);
+                bOcho.setEnabled(true);
+                bNueve.setEnabled(true);
+                bDecimal.setEnabled(true);
+                bIgual.setEnabled(true);
+                bSumar.setEnabled(true);
+                bRestar.setEnabled(true);
+                bMultiplicar.setEnabled(true);
+                bDividir.setEnabled(true);
+                etOperacion.setEnabled(true);
+                etResultado.setEnabled(true);
+                etOperacion.setText("");
+                etResultado.setText("");
+            }
+        }
+        public int comprobarResul(double x) {
+            if (x % 1 == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
 
 }

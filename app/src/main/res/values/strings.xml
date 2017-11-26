@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">calculadora</string>
+    <string name="app_name">Eugeni D"'"Ors</string>
     <string name="boton0">0</string>
     <string name="boton1">1</string>
     <string name="boton2">2</string>
@@ -19,4 +19,7 @@
     <string name="botonac">AC</string>
     <string name="botonborrar">Borrar</string>
     <string name="cbactivar">Activar</string>
+    <string name="dividircero">dividir por cero</string>
+    <string name="nopermitido">Op. no permitida</string>
+    <string name="mensajeactivar">Pulsa ACTIVAR para realizar una operación</string>
 </resources>
