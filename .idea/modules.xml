@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\MaWar\Desktop\calculadorav1.5\calculadora.iml" filepath="C:\Users\MaWar\Desktop\calculadorav1.5\calculadora.iml" />
       <module fileurl="file://$PROJECT_DIR$/calculadorav1.5.iml" filepath="$PROJECT_DIR$/calculadorav1.5.iml" />
     </modules>
   </component>
